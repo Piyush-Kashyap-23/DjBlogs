@@ -1,0 +1,22 @@
+<nav>
+    <div class="logo">
+        <h1><a href="/">DjBlogs</a></h1>
+    </div>
+    <form action="" method="GET" class="search">
+        <input type="text" name="search" placeholder="Search...">
+    </form>
+    <ul class="navigation">
+        <!-- Not logged in -->
+        {% if request.user.is_authenticated %}
+            <li class="nav-item font-1x">Welcome <a href="/" class="text-underline user-btn">{{request.user.username}}</a></li>
+            <div class="dropdown">
+                <div class="dropdown-item"><a href="{% url 'my_account' %}">My Account</a></div>
+                <div class="dropdown-item"><a href="{% url 'post_create' %}">Create</a></div>
+                <div class="dropdown-item"><a href="{% url 'logout' %}">Logout</a></div>
+            </div>
+        {% else %}
+            <li class="nav-item"><a href="{% url 'login' %}" class="font-1x">Login</a></li>
+            <li class="nav-item ml-2"><a href="{% url 'register' %}" class="font-1x">Signup</a></li>
+        {% endif %}
+    </ul>
+</nav>

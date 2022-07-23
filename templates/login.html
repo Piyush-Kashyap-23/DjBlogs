@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="login-container">
+    <h1>Login</h1>
+    <form class="main-login" method="POST" action="" >
+        {% csrf_token %}
+        {% if message %}
+            <h1 class="error-message">{{message}}</h1>
+        {% endif %}
+        <div class="login-item">
+            <label for="username">username</label>
+            <input type="text" id="username" name="username" placeholder="john" class="form-input" />
+        </div>
+        <div class="login-item">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" placeholder="••••••••••" class="form-input" />
+        </div>
+        <input type="submit" value="Log in" class="login-btn" />
+    </form>
+</div>
+
+{% endblock content %}

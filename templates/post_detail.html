@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="post-container">
+            <div class="post-left">
+                <div class="post-header">
+                    <h1>{{post.title}}</h1>
+                    <small>@{{post.author}}</small>
+                </div>
+                <p>{{post.body}}</p>
+            </div>
+            
+            {% if request.user == post.author %}
+                <div class="post-right">
+                    <a href="{% url 'post_delete' post.id %}"><img src="{% static '/images/bin.png' %}" alt="Delete"></a>
+                    <a href="{% url 'post_update' post.id %}"><img src="{% static '/images/pencil.png' %}" alt="Update"></a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="comments-container">
+            <h1>{{post.comment_set.all.count}} Comments</h1>
+            {% if request.user.is_authenticated %}
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="text" name="comment" placeholder="Type your Comment here...">
+            </form>
+            {% endif %}
+            <div class="comments-wrapper">
+                {% for comment in post.comment_set.all %}
+                <div class="comment">
+                    <div class="comment-header">
+                        <h1>{{comment.author}}</h1>
+                        <p>{{comment.created|timesince}} ago</p>
+                    </div>
+                    <p>{{comment.comment}}</p>
+                </div>
+                <hr />
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

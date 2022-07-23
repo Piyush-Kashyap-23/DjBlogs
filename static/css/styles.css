@@ -1,0 +1,273 @@
+/* Importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default styles */
+html {
+    overflow: hidden;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* Utility classes */
+.ml-2 {
+    margin-left: 20px;
+}
+.mt-2 {
+    margin-top: 20px;
+}
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.font-1x {
+    font-size: 1.2rem;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.d-none {
+    display: none;
+}
+
+.transform-remove {
+    transform: translateX(0) !important;
+}
+
+.container {
+    padding: 0 2rem;
+    padding-bottom: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    /* background-color: red; */
+}
+
+.search input{
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+nav .navigation {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown{
+    position: absolute;
+    background-color: white;
+    box-shadow: 2px 4px 18px 5px #9f9898;
+    top: 80px;
+    padding: 1rem;
+    right: 2rem;
+    transition: all 0.3s;
+    transform: translateX(200%);
+}
+
+.dropdown-item:nth-child(2) {
+    margin: 10px 0;
+}
+
+.dropdown-item a {
+    font-size: 1.2rem;
+}
+
+/* Blog styles */
+.blog {
+    box-shadow: 3px 2px 11px 5px gainsboro;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+.blog:first-child {
+    margin-top: 10px;
+}
+.blog a {
+    transition: all 0.3s;
+}
+.blog a:hover {
+    color: black;
+}
+.blog p {
+    margin: 10px 0;
+}
+
+/* Login page styles */
+.login-container {
+    width: 50%;
+    margin: auto;
+    box-shadow: 3px 2px 11px 5px gainsboro;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.main-login {
+    margin-top: 1rem;
+}
+
+.login-item {
+    margin-top: 1rem;
+}
+.login-item label {
+    margin-bottom: 3px;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.login-btn {
+    margin-top: 1.4rem;
+    border: none;
+    padding: 1rem 1.5rem;
+    outline: none;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.login-btn:hover {
+    background-color: black;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+}
+
+.user-btn {
+    margin-left: 5px;
+}
+
+/* post-container styles (post_detail) */
+
+.post-container .post-header {
+    display: flex;
+    align-items: center;
+}
+
+.post-container .post-header h1 {
+    font-size: 1.5rem;
+}
+.post-container .post-header small {
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.post-container p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.post-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-right img {
+    height: 30px;
+    cursor: pointer;
+}
+
+.post-right img:last-child {
+    margin-left: 20px;
+}
+
+.comments-container {
+    margin-top: 30px;
+}
+
+.comments-container h1{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.comments-container input {
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.comment {
+    margin-top: 20px;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+
+.comment-header p {
+    margin-left: 10px;
+}
+
+.comments-wrapper p{
+    margin-bottom: 10px;
+}
+
+/* Responsiveness */
+@media(max-width: 726px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .login-container {
+        width: 90%;
+    }
+    .post-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .account-container .account-posts h1{
+        margin-top: 20px;
+    }
+}
